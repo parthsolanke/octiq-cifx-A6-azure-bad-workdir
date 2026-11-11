@@ -1,0 +1,12 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: Npm@1
+    inputs:
+      command: custom
+      customCommand: run test
+      workingDirectory: $(Build.SourcesDirectory)/app
